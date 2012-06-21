@@ -1,0 +1,1 @@
+MVC template for [mode](https://github.com/skidding/mode).
