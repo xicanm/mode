@@ -16,7 +16,7 @@ mode.route.add('/@controller', { redirect: '/{{controller}}/index' });
 */
 mode.route.add('/:controller/@action', {}, function(args, method)
 {
-	var rest = ['index', 'show', 'edit', 'create', 'update', 'delete'];
+	var rest = ['index', 'show', 'new', 'edit', 'create', 'update', 'delete'];
 
 	if(rest.indexOf(args.action) == -1)
 	{
