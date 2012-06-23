@@ -2,7 +2,7 @@ exports.super = 'controller/base';
 
 exports.class = function(mode)
 {
-	this.action.load = function(callback)
+	this.action.show = function(callback)
 	{
 		var path = mode.settings.path.app + '/asset' + this.args.path;
 
