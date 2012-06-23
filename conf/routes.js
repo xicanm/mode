@@ -12,7 +12,7 @@ mode.route.add('/@controller', { redirect: '/{{controller}}/index' });
 
 	create, update and delete require POST
 */
-mode.route.add('/@controller/@action', {}, function(args)
+mode.route.add('/@controller/@action', {}, function(args, method)
 {
 	var rest = ['index', 'show', 'edit', 'create', 'update', 'delete'];
 
@@ -20,7 +20,7 @@ mode.route.add('/@controller/@action', {}, function(args)
 	{
 		return false;
 	}
-	return args.method == 'post' || rest.indexOf(args.action) < 3;
+	return method == 'POST' || rest.indexOf(args.action) < 3;
 });
 /*
 	Asset route
