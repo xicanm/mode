@@ -5,6 +5,8 @@ var mode = require('mode');
 mode.route.add('/', { redirect: '/main/index' });
 /*
 	Controller route, redirect to index action if missing
+
+	Only works for controllers in default namespace
 */
 mode.route.add('/@controller', { redirect: '/{{controller}}/index' });
 /*
@@ -12,7 +14,7 @@ mode.route.add('/@controller', { redirect: '/{{controller}}/index' });
 
 	create, update and delete require POST
 */
-mode.route.add('/@controller/@action', {}, function(args, method)
+mode.route.add('/:controller/@action', {}, function(args, method)
 {
 	var rest = ['index', 'show', 'edit', 'create', 'update', 'delete'];
 
