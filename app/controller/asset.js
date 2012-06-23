@@ -1,20 +1,18 @@
-exports.super = 'controller/base';
+var mode = require('mode');
 
-exports.class = function(mode)
+mode.controller.Asset = mode.controller.Base.extend(function(parent)
 {
-	this.action.show = function(callback)
+	this.show = function(callback)
 	{
 		var path = mode.settings.path.app + '/asset' + this.args.path;
-
-		var that = this;
-
+		
 		require('fs').readFile(path, function(error, data)
 		{
 			if(error)
 			{
-				that.error(404, 'Not found ' + that.args.path);
+				parent.error(404, 'Not found' + that.args.path);
 			}
 			callback(data);
 		});
 	};
-};
+});

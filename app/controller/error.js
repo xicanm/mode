@@ -1,9 +1,9 @@
-exports.super = 'controller/base';
+var mode = require('mode');
 
-exports.class = function(mode)
+mode.controller.Error = mode.controller.Base.extend(function()
 {
-	this.action.show = function(callback)
+	this.show = function(callback)
 	{
 		callback('ERROR: ' + this.args.message);
 	};
-};
+});

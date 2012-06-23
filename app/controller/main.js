@@ -1,21 +1,21 @@
-exports.super = 'controller/app';
+var mode = require('mode');
 
-exports.class = function(mode, parent)
+mode.controller.Main = mode.controller.App.extend(function(parent)
 {
 	this.static.counter = 0;
 
-	this.action.init = function(callback)
+	this.init = function(callback)
 	{
-		parent.action.init.call(this);
+		parent.init.call(this);
 
 		this.args.title = 'Hello #' + ++this.static.counter;
 
 		callback();
 	};
-	this.action.index = function(callback)
+	this.index = function(callback)
 	{
 		this.args.counter = this.static.counter;
 
 		callback();
 	};
-};
+});

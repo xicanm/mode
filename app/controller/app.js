@@ -1,10 +1,8 @@
-exports.super = 'controller/base';
+var mode = require('mode');
 
-exports.abstract = true;
-
-exports.class = function(mode)
+mode.controller.App = mode.controller.Base.extend(function()
 {
-	this.action.init = function(callback)
+	this.init = function(callback)
 	{
 		this.args.layout = 'default';
 
@@ -12,5 +10,5 @@ exports.class = function(mode)
 		{
 			callback();
 		}
-	}
-};
+	};
+});
