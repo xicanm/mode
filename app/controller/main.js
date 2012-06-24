@@ -2,19 +2,13 @@ var mode = require('mode');
 
 mode.controller.Main = mode.controller.App.extend(function(parent)
 {
-	this.static.counter = 0;
+	this.static.count = 0;
 
-	this.init = function(callback)
-	{
-		parent.init.call(this);
-
-		this.args.title = 'Hello #' + ++this.static.counter;
-
-		callback();
-	};
 	this.index = function(callback)
 	{
-		this.args.counter = this.static.counter;
+		this.args.title = 'New Project';
+
+		this.args.count = this.static.count++;
 
 		callback();
 	};
