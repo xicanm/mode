@@ -1,6 +1,6 @@
 var mode = require('mode');
 
-mode.controller.App = mode.controller.Base.extend(function()
+(mode.controller.App = mode.controller.Base.extend(function()
 {
 	this.init = function(callback)
 	{
@@ -11,4 +11,5 @@ mode.controller.App = mode.controller.Base.extend(function()
 			callback();
 		}
 	};
-});
+}))
+.abstract = true;
