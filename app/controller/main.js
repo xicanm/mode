@@ -6,8 +6,7 @@ mode.controller.Main = mode.controller.App.extend(function()
 
 	this.index = function(callback)
 	{
-		this.args.title = 'New Project';
-		this.args.count = this.static.count++;
+		this.args.title = 'node.js project';
 
 		callback();
 	};
