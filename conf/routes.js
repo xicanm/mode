@@ -8,7 +8,7 @@ mode.route.add('/', { redirect: '/main/index' });
 
 	Only works for controllers in default namespace
 */
-mode.route.add('/@controller', { redirect: '/{{controller}}/index' });
+mode.route.add('/@controller/?', { redirect: '/{{controller}}/index' });
 /*
 	REST route
 
@@ -22,7 +22,7 @@ mode.route.add('/:controller/@action', {}, function(args, method)
 	{
 		return false;
 	}
-	return method == 'POST' || rest.indexOf(args.action) < 3;
+	return method == 'POST' || rest.indexOf(args.action) < 4;
 });
 /*
 	Asset route
