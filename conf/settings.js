@@ -4,7 +4,8 @@ var mode = require('mode');
 */
 mode.settings.server =
 {
-	hostname: '0.0.0.0', port: 1337
+	host: '0.0.0.0',
+	port: 1337
 };
 /*
 	Supported extensions, with
@@ -21,3 +22,13 @@ mode.settings.types =
 	png: 'image/png',
 	ico: 'image/x-icon'
 };
+/*
+	Database params
+*/
+/*mode.settings.db =
+{
+	adaptor: mode.model.Mongo,
+	host: '127.0.0.1',
+	port: 27017,
+	name: 'test'
+};*/
