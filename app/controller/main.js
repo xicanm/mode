@@ -1,6 +1,6 @@
 var mode = require('mode');
 
-mode.controller.Main = mode.controller.App.extend(function()
+mode.controller.Main = require('./app.js').extend(function()
 {
 	this.static.count = 0;
 

@@ -1,6 +1,6 @@
 var mode = require('mode');
 
-mode.controller.Error = mode.controller.App.extend(function()
+mode.controller.Error = require('./app.js').extend(function()
 {
 	this.show = function(callback)
 	{
