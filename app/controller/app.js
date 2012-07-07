@@ -6,10 +6,7 @@ mode.controller.App = mode.controller.Base.extend(function()
 	{
 		this.args.layout = 'default';
 
-		if(typeof(callback) == 'function')
-		{
-			callback();
-		}
+		callback.respond();
 	};
 },
 true);
