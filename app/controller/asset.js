@@ -2,17 +2,17 @@ var mode = require('mode');
 
 mode.controller.Asset = mode.controller.Base.extend(function()
 {
-	this.show = function(cb)
+	this.show = function()
 	{
 		var path = mode.settings.path.app + '/asset' + this.args.path;
 
-		require('fs').readFile(path, cb.bind(function(error, data)
+		require('fs').readFile(path, this.bind(function(error, data)
 		{
 			if(error)
 			{
 				this.error(404, 'Not found ' + this.args.path);
 			}
-			cb.respond(data);
+			this.callback(data);
 		}));
 	};
 });

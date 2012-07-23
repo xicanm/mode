@@ -2,7 +2,7 @@ var mode = require('mode');
 
 mode.controller.App = mode.controller.Base.extend(function()
 {
-	this.init = function(cb)
+	this.init = function()
 	{
 		/*
 			Store session reference
@@ -24,12 +24,6 @@ mode.controller.App = mode.controller.Base.extend(function()
 			Set default page title
 		*/
 		this.args.title = 'node.js project';
-		/*
-			End action asynchronously, even though no
-			aync action is taking place here, to make
-			it extendable by children with async init
-		*/
-		cb.respond();
 	};
 	this.notify = function(type, message)
 	{
