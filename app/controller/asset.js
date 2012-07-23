@@ -10,7 +10,7 @@ mode.controller.Asset = mode.controller.Base.extend(function()
 		{
 			if(error)
 			{
-				this.error(404, 'Not found ' + this.args.path);
+				mode.throw(404, 'Not found ' + this.args.path);
 			}
 			this.callback(data);
 		}));
