@@ -1,6 +1,6 @@
 var mode = require('mode');
 
-mode.controller.App = mode.controller.Base.extend(function()
+mode.controller.App = mode.controller.REST.extend(function()
 {
 	this.init = function()
 	{
