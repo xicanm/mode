@@ -29,6 +29,36 @@ mode.controller.App = mode.controller.REST.extend(function()
 	{
 		this.notifications.add(type, message);
 	};
+	this.created = function(error)
+	{
+		var type = this.model.group;
+
+		if(!error)
+		{
+			this.notify('success', 'Created ' + type + ' successfully!');
+		}
+		else this.notify('error', 'Could not create ' + type + '!');
+	};
+	this.updated = function(error)
+	{
+		var type = this.model.group;
+
+		if(!error)
+		{
+			this.notify('success', 'Updated ' + type + ' successfully!');
+		}
+		else this.notify('error', 'Could not update ' + type + '!');
+	};
+	this.deleted = function(error)
+	{
+		var type = this.model.group;
+
+		if(!error)
+		{
+			this.notify('notice', 'Deleted ' + type + ' successfully!');
+		}
+		else this.notify('error', 'Could not delete ' + type + '!');
+	};
 },
 true);
 
