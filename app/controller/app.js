@@ -14,28 +14,28 @@ module.exports = mode.controller.REST.extend(function(parent) {
   this.notify = function(type, message) {
     this.notifications.add(type, message);
   };
-  this.created = function(error) {
+  this.on('created', function(error, item) {
     var type = this.model.group;
     if (!error) {
       this.notify('success', 'Created ' + type + ' successfully!');
     } else {
       this.notify('error', 'Could not create ' + type + '!');
     }
-  };
-  this.updated = function(error) {
+  });
+  this.on('updated', function(error, item) {
     var type = this.model.group;
     if (!error) {
       this.notify('success', 'Updated ' + type + ' successfully!');
     } else {
       this.notify('error', 'Could not update ' + type + '!');
     }
-  };
-  this.deleted = function(error) {
+  });
+  this.on('deleted', function(error, item) {
     var type = this.model.group;
     if(!error) {
       this.notify('notice', 'Deleted ' + type + ' successfully!');
     } else {
       this.notify('error', 'Could not delete ' + type + '!');
     }
-  };
+  });
 }, true);
