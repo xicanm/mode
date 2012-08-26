@@ -1,5 +1,4 @@
 var mode = require('mode');
-
-mode.setup({ base: __dirname });
-
-mode.start(mode.settings);
+mode.init();
+mode.setup(__dirname);
+mode.start();
