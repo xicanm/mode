@@ -5,7 +5,7 @@ module.exports = mode.controller.REST.extend(function(parent) {
     // Store session reference
     this.session = this.conn.req.session;
     // Init and store notification reference
-    this.notifications = mode.notification.init(this.session);
+    this.notifications = mode.module.notification.init(this.session);
     // Pass notification to view vars
     this.args.notifications = this.notifications;
     // Set default page title
