@@ -17,9 +17,9 @@ mode.settings.types = {
 };
 
 // Database params
-mode.settings.db = {
+/*mode.settings.db = {
   adaptor: mode.model.Mongo,
   host: '127.0.0.1',
   port: 27017,
   name: 'test'
-};
+};*/
