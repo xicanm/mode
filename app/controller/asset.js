@@ -6,7 +6,7 @@ module.exports = mode.controller.Base.extend(function() {
       if (error) {
         mode.throw(404, 'Not found ' + this.args.path);
       }
-      this.callback(data);
+      this.return(data);
     }));
   };
 });
