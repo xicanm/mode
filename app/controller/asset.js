@@ -1,6 +1,6 @@
 var mode = require('mode');
 module.exports = mode.controller.Base.extend(function() {
-  this.show = function() {
+  this.action.show = function() {
     var path = mode.settings.path.app + '/asset' + this.args.path;
     require('fs').readFile(path, this.bind(function(error, data) {
       if (error) {

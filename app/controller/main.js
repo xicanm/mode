@@ -1,5 +1,5 @@
 module.exports = require('./app.js').extend(function() {
-  this.index = function() {
+  this.action.index = function() {
     return '/{{controller}}/index';
   };
 });
