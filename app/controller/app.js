@@ -2,17 +2,21 @@ var mode = require('mode');
 module.exports = mode.controller.REST.extend(function(parent) {
   this.init = function() {
     parent.init.call(this);
-    // Store session reference
-    this.session = this.conn.req.session;
-    // Init and store notification reference
-    this.notifications = mode.module.notification.init(this.session);
-    // Pass notification to view vars
-    this.args.notifications = this.notifications;
+    if (this.conn) {
+      // Store session reference
+      this.session = this.conn.req.session;
+      // Init and store notification reference
+      this.notifications = mode.module.notification.init(this.session);
+      // Pass notification to view vars
+      this.args.notifications = this.notifications;
+    }
     // Set default page title
     this.args.title = 'node.js project';
   };
   this.notify = function(type, message) {
-    this.notifications.add(type, message);
+    if (this.notifications) {
+      this.notifications.add(type, message);
+    }
   };
   this.on('created', function(error, item) {
     var type = this.model.group;
